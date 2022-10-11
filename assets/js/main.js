@@ -21,7 +21,8 @@ userClick.addEventListener("click", function() {
     // prendo la mail dell'utente dal form
     const userEmail = document.getElementById("emailUser").value;
 
-    let securityMessage = document.getElementById(`security_message`).innerHTML = "Non sei autorizzato a proseguire";
+    let securityMessage = document.getElementById(`security_message`);
+    securityMessage.innerHTML = "Non sei autorizzato a proseguire";
 
     // creo un loop per leggere tutti i valori contenuti nell'array
     for (let i = 0; i < authorisedEmail.length; i++) {
@@ -33,7 +34,7 @@ userClick.addEventListener("click", function() {
         // controlla che sia nella lista di chi può accedere
         if (userEmail === mailOk) {
             // stampa un messaggio appropriato sull’esito del controllo
-            securityMessage = document.getElementById(`security_message`).innerHTML = "Sei autorizzato a proseguire";
+            securityMessage.innerHTML = "Sei autorizzato a proseguire";
 
         }
     }
@@ -41,13 +42,6 @@ userClick.addEventListener("click", function() {
 
 }
 )
-
-
-
-
-
-
-
 
 
 // DADI GAME
