@@ -19,12 +19,14 @@ userClick.addEventListener("click", function() {
     const userEmail = document.getElementById("emailUser").value;
 
     // creo un loop per leggere tutti i valori contenuti nell'array
-    for (let i = 0; i <= authorisedEmail.length; i++) {
+    for (let i = 0; i < authorisedEmail.length; i++) {
         
-        const mailOk = authorisedEmail[i];
-
+        let mailOk = authorisedEmail[i];
+        console.log(mailOk);
+        console.log(userEmail);
+        
         // controlla che sia nella lista di chi può accedere
-        if (userEmail == mailOk) {
+        if (userEmail === mailOk) {
             // stampa un messaggio appropriato sull’esito del controllo
             document.getElementById(`security_message`).innerHTML = "Sei autorizzato a proseguire";
 
